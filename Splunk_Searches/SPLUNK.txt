@@ -1,0 +1,87 @@
+-> SPLUNK SEARCH MODES
+
+* FAST MODE - REPRESENTED IN LIGHTNING SYMBOL
+* SMART MODE - REPRESENTED IN CIRCULAR SYMBOL
+* VERBOSE MODE - REPRESENTED IN SOUND SYMBOL
+
+-> FIELD OPERATORS 
+
+* used for analysing result
+* common functions are - WILDCARDS, BOOLEANS AND COMPARISION OPERATORS
+
+# OPERATORS
+
+- field = value
+- field != value
+- field < value
+- field > value
+- field <= value
+- field => value
+
+# BOOLEAN
+
+- field NOT value
+- field = value1 OR field = value2 
+- field = value1 AND field = value2 
+
+# WILDCARDS
+
+- field = "value*"
+
+-> FIELD SIDEBAR
+
+* located on left portion of splunk search, pulls selected and ineterested fields for quick search results
+* Texted field denoted with a i.e alpha
+  Numeric field with #
+
+-> SPLUNK RESULT FIELDS
+
+* events displayed
+* formatting, per event
+* ADD, EXCLUDE, NEW
+
+-> SPL QUERIES
+
+* SEARCH PROCESSING LANGUAGE
+* uses the pipe to chain search commands
+* index="airbnb" Neighbourhood=Halmer room_type="private_room" | command <argument>
+* SPL Keywords - AS, BY, OVER, WHERE
+  EX: index="airbnb" | where price > 40
+* SPL filtering and modifying results 
+  Fields - allows to add or remove 
+  Search - allows to searching the raw text while using chaining command
+  Dedup - removes the duplicate fields from the search results
+  Rename - allows for field names to be changed in search results
+* Ordering search result :-
+  Head - returns top 10 results
+  Tail - returns last 10 results
+  Sort - sorting in ascending order
+  Reverse - put search result in reverse order
+  Tables - SPL cmd for creating table with specific field
+
+# TRANSFORMING COMMANDS
+
+* TOP cmd - returns the frequent value for the defaulted top 10 results
+* RARE cmd - returns the least value for the defaulted top 10 results
+* HIGHTLIGHT cmd - shows result in raw events mode with fields highlighted
+* CONTINGENCY cmd - shows associations between fields in table
+
+# STATS COMMANDS
+
+* special type of transformming commands primarily used for calculation to for table results
+  STATS avg([fieldname]) - calculate average 
+  STATS count(eval[fieldname]) as newname - returns timeseries cart over the data element 
+  STATS max(fieldname) - returns maximum values
+  STATS min(fieldname)- returns minmum value
+  STATS sum(fieldname) - returns of specific field
+
+# CHARTS COMMANDS
+
+* type of transformation commands for presenting data in tables or visualization.
+* typically includes stats commands
+   chart somefunction([fieldname])
+   timechart somefunction([fieldname])
+ 
+=> BEYOND BASICS OF SEARCH
+
+# LOOKUP - table mapping in SPLUNK for associating key value pairs in the search output
