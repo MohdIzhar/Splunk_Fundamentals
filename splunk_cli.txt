@@ -1,0 +1,32 @@
+# some SPLUNK cli commands
+
+-> cd /opt/splunk/bin
+-> ./splunk help			// to get help options
+-> ./splunk help commands		// to get list of all cli commands
+-> ./splunk start			// to start splunk
+-> ./splunk stop			// to stop splunk process
+-> ./splunk status			// to check the splunk status
+-> ./splunk restart			// to restart splunk
+-> ./splunk set web-port 9000		// to change splunk port number
+-> ./splunk set minfreemb=20000		// to specify minimum disk usage by splunk
+-> ./splunk validate cluster-bundle	// to validate cluster bundle
+-> ./splunk show cluster-bundle-status	// to check cluster-bundle status
+-> ./splunk show deploy-poll
+
+# locating the log files of splunk
+
+-> cd /opt/splunk/var/log/splunk
+-> ls
+-> tail -f *				// to check the all logs in real time
+
+OR
+
+-> tail -n 20 $SPLUNK_HOME/var/log/splunk
+
+# checking the configuration files in SPLUNK
+
+-> cd /opt/splunk/etc/system/default
+-> ls
+* shows all the default configuration files  
+
+
